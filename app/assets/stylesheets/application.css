@@ -1,0 +1,191 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+
+ body {
+  font-family: Life Savers;
+  text-align: center;
+
+}
+
+form {
+  color: white;
+  background-color: rgba(255, 0, 0, 0.9);
+  width: 30%;
+  font-size: 25px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  border-radius: 3px;
+}
+
+header {
+  margin-top: 70px;
+  margin-bottom: 20px;
+  text-align: center;
+  background-color: red;
+  height: 300px;
+}
+
+header img {
+  top: 300px;
+}
+
+.login {
+  text-align: center;
+  margin-top: 70px;
+  margin-bottom: 30px;
+  font-size: 15px;
+}
+
+.login a {
+  text-decoration: none;
+  padding: 5px 10px;
+  margin: 10px;
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+  background-color: red;
+  border-radius: 3px;
+}
+
+.login_header h2 {
+  color: white;
+  width: 30%;
+  margin: 0 auto;
+  padding: 10px 20px;
+  border-radius: 3px;
+  
+  background-color: red;
+}
+
+
+#board table {
+    border-collapse: collapse;
+    background: red;
+    /*border-spacing: 50px 50px;*/
+    text-align: center;
+    margin: 70px auto;
+    padding: 10px 10px;
+    border-radius: 3px;
+}
+
+  #board td {
+    padding: 100px 30px;
+  }
+
+#board table td {
+  border: 7px solid white;
+}
+
+
+.nav_bar {
+  margin-top: 70px;
+}
+.nav_bar a {
+  color: white;
+  text-decoration: none;
+  background: red;
+  padding: 20px 20px;
+  border-radius: 3px;
+  font-size: 30px;
+}
+
+#board td a {
+  font-size: 30px;
+  color: white;
+  font-family: Life Savers;
+}
+
+#error_explanation {
+  margin: 10px auto;
+}
+
+
+.player_names p{
+  font-family: Life Savers;
+  font-size: 30px;
+}
+
+.player_names table {
+  margin: 0 auto;
+}
+
+.new_match_link a {
+  color: white;
+  background-color: red;
+  border-radius: 3px;
+  text-decoration: none;
+  padding: 10px 10px;
+  
+}
+
+.value_style {
+  font-size: 100px;
+  color: white;
+
+}
+
+.match_finished_notice {
+  font-size: 30px;
+}
+
+
+
+
+.matches_table table {
+  border-spacing: 50px;
+  margin: 50px;
+  color: red;
+  border-radius: 3px;
+  background-color: #e9e9e9;
+
+}
+
+.matches_table table thead {
+  font-size: 20px;
+  color: gray;
+}
+
+.your_matches {
+  font-size: 30px;
+  padding-top: 20px;
+  color: gray;
+}
+
+.matches_table td {
+  font-family: Life Savers;
+  font-size: 20px;
+}
+
+.matches_table td a {
+  font-family: Life Savers;
+  background-color: white;
+  color: red;
+  border-radius: 3px;
+  padding: 5px 15px;
+  text-decoration: none;
+}
+
+.back_link a {
+  font-size: 20px;
+  margin-bottom: 20px;
+
+}
+
+th, td {
+  width: 25%;
+  text-align: center;
+}

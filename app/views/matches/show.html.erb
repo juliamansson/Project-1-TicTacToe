@@ -1,0 +1,163 @@
+<div class="player_names">
+<p id="notice"><%= notice %></p>
+
+  <TABLE>
+     <TR>
+        <TD>
+          <p>
+            <%= @match.user_x.name %> 
+            <br>
+            <br>
+            <%= image_tag @match.user_x.user_image.thumb.url if @match.user_x.user_image  %>
+            <br>
+            <br>
+            <strong>as X </strong>
+          <p> 
+        </TD>
+          <td>vs.</td>
+        <TD>
+          <p>
+            <%= @match.user_o.name %>
+            <br>
+            <br>
+            <%= image_tag @match.user_o.user_image.thumb.url if @match.user_o.user_image %>
+            <br>
+            <br>
+          <strong>as O </strong>
+          </p>
+        </TD>
+  </TABLE>
+</div>
+
+<% if @move && @move.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@move.errors.count, "error") %> prohibited this move from being saved:</h2>
+
+    <ul>
+    <% @move.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div class="match_finished_notice">
+<% if @match.is_match_drawn? %> <h2>Draw!</h2>
+<% else %>
+<% @match.is_match_finished? %><h2>Game Finished!</h2><%= @match.winner.name %> Won
+<% end %>
+</div>
+
+<div id="board">
+   <table>
+     <tr id="row1">
+       <td class="square">
+        <% if @match.move_for_square(0) %>
+          <div class="value_style">
+          <%= @match.move_for_square(0).value %>
+        </div>
+        <% else %>
+        <%= link_to "play here", make_move_path(@match, square_id: 0), method: :post  %>
+        <% end %>
+       </td>
+
+       <td class="square">
+       <% if @match.move_for_square(1) %>
+       <div class="value_style">
+       <%= @match.move_for_square(1).value %>
+     </div>
+       <% else %>
+       <%= link_to "play here", make_move_path(@match, square_id: 1), method: :post  %>
+       <% end %>
+
+      </td>
+
+       <td class="square">
+       <% if @match.move_for_square(2) %>
+       <div class="value_style">
+       <%= @match.move_for_square(2).value %>
+     </div>
+       <% else %>
+       <%= link_to "play here", make_move_path(@match, square_id: 2), method: :post  %>
+       <% end %>
+     </td>
+
+
+     </tr>
+     <tr id="row2">
+       <td class="square">
+        <% if @match.move_for_square(3) %>
+          <div class="value_style">
+          <%= @match.move_for_square(3).value %>
+        </div>
+        <% else %>
+        <%= link_to "play here", make_move_path(@match, square_id: 3), method: :post  %>
+        <% end %>
+      </td>
+
+       <td class="square">
+        <% if @match.move_for_square(4) %>
+          <div class="value_style">
+          <%= @match.move_for_square(4).value %>
+        </div>
+        <% else %>
+        <%= link_to "play here", make_move_path(@match, square_id: 4), method: :post  %>
+        <% end %>
+        </td>
+
+      <td class="square">
+        <% if @match.move_for_square(5) %>
+          <div class="value_style">
+          <%= @match.move_for_square(5).value %>
+        </div>
+        <% else %>
+        <%= link_to "play here", make_move_path(@match, square_id: 5), method: :post  %>
+        <% end %>
+        </td>
+     </tr>
+
+
+     <tr id="row3">
+         <td class="square">
+         <% if @match.move_for_square(6) %>
+          <div class="value_style">
+          <%= @match.move_for_square(6).value %>
+        </div>
+         <% else %>
+         <%= link_to "play here", make_move_path(@match, square_id: 6), method: :post  %>
+         <% end %>
+       </td>
+         <td class="square">
+         <% if @match.move_for_square(7) %>
+           <div class="value_style">
+           <%= @match.move_for_square(7).value %>
+         </div>
+         <% else %>
+         <%= link_to "play here", make_move_path(@match, square_id: 7), method: :post  %>
+         <% end %>
+       </td>
+         <td class="square">
+         <% if @match.move_for_square(8) %>
+          <div class="value_style">
+          <%= @match.move_for_square(8).value %>
+        </div>
+         <% else %>
+         <%= link_to "play here", make_move_path(@match, square_id: 8), method: :post  %>
+         <% end %>
+       </td>
+     </tr>
+   </table>
+ </div>
+
+ <br>
+ <br>
+<!-- <p>
+  <strong>Winner:</strong>
+  <%= @match.winner_id %>
+</p> -->
+
+<div class="back_link">
+
+<%= link_to 'Back', matches_path %>
+
+</div>

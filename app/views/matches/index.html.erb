@@ -1,0 +1,77 @@
+<div class="your_matches">
+<h1><%= current_user.first_name %>'s Matches</h1>
+</div>
+
+<br>
+<div class="new_match_link">
+<%= link_to 'New Match', new_match_path %>
+</div>
+
+<div class="matches_table">
+<table>
+  <thead>
+    <tr>
+      <th>Playing as X</th>
+      <th>Playing as O</th>
+      <th>Winner</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @matches.each do |match| %>
+      <tr>
+        <!-- <td><%= match.user_x.name%></td>
+        <td><%= match.user_o.name %></td> -->
+
+          <td> 
+          <% if match.user_x.user_image  %>
+          <%= image_tag match.user_x.user_image.thumb.url %>
+          <% else %>
+          <%= match.user_x.name %>
+          <% end %>
+        </td>
+
+          
+        <td> 
+          <% if match.user_o.user_image  %>
+          <%= image_tag match.user_o.user_image.thumb.url %>
+          <% else %>
+          <%= match.user_o.name %>
+          <% end %>
+        </td>
+
+
+
+
+
+
+
+
+
+
+        <td><% if match.is_match_finished? %>
+          <% if match.winner %>
+        <%= match.winner.name %>
+      
+        <% else %>
+        Draw
+        <% end %>
+        <% else %>
+        In Progress
+        <% end %>
+        </td>
+        
+      
+        <td><%= link_to 'Show', match %></td>
+        <td><%= link_to 'Remove', match, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+
+<br>
+
+

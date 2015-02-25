@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tictactoe</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Life+Savers' rel='stylesheet' type='text/css'>
+    </head>
+
+<header>
+  <img src="/assets/tictactoe.png" alt "tictactoe"  height="300px" width="300px">
+</header>
+
+
+
+
+<% if user_signed_in? %>
+<div class="nav_bar"> 
+<%= link_to "My Matches", matches_path %>
+<%= link_to "Edit Profile", edit_user_registration_path %>
+
+<%= link_to "Leaderboard", leaderboards_path %>
+</div>
+<% end %>
+
+  <div class='login'>
+      <% if user_signed_in? %>
+      <%= current_user.email %>
+      <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+
+      <% else %>
+        <%= link_to "Sign In", new_user_session_path %>
+        <%= link_to "Register", new_user_registration_path %>
+      <% end %>
+    </div>
+
+
+    
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+
+
+
+<%= yield %>
+
+</body>
+</html>
